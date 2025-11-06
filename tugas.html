@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - TechGadget Pro</title>
+    <style>
+        /* CSS yang Anda sediakan + modifikasi untuk Slider */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 15px 40px; /* Sedikit dikecilkan */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 9999;
+        }
+        .header .logo img {
+            width: 50px; /* Sedikit dikecilkan */
+        }
+        .header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        .header nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .header nav ul li a:hover {
+            color: #0071e3;
+        }
+        /* HERO (Home/Deskripsi Website) */
+        .hero {
+            padding-top: 100px; /* Penyesuaian karena header lebih kecil */
+            padding-bottom: 50px;
+            text-align: center;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0071e3;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px auto 30px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        /* CAROUSEL (Slider Dinamis) */
+        .carousel-section {
+            padding: 60px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .slide-active {
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+            text-decoration: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .dots-container {
+            text-align: center;
+            padding: 15px 0 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .dot-active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: #0071e3;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo TechGadget Pro"> </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li> <li><a href="#deskripsi">Deskripsi</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li>  <a href="index.html">login</a> </li>   
+            </ul>
+            
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>TechGadget Pro</h1>
+        <p id="deskripsi">
+            **TechGadget Pro** adalah destinasi utama Anda untuk inovasi teknologi terkini. Kami menyediakan berbagai produk gadget cerdas yang dirancang untuk meningkatkan produktivitas dan gaya hidup digital Anda. Mulai dari perangkat canggih hingga aksesoris esensial, temukan teknologi yang sesuai dengan kebutuhan Anda di sini.
+        </p>
+        <a href="#produk" class="cta-button" style="display: inline-block; background-color: #0071e3; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-size: 1.1rem; transition: 0.3s;">Lihat Produk Unggulan</a>
+    </section>
+
+    <section class="carousel-section" id="produk">
+        <h2>Produk Unggulan Kami</h2>
+        <div class="carousel-container">
+            <div class="slide slide-active">
+                <img src="belakang.jpg" alt="Slide 1: Gadget Premium" title="Gadget Premium">
+            </div>
+            <div class="slide">
+                <img src="case.jpg" alt="Slide 2: Aksesoris Cerdas" title="Aksesoris Cerdas">
+            </div>
+            <div class="slide">
+                <img src="depan.jpg" alt="Slide 3: Desain Minimalis" title="Desain Minimalis">
+            </div>
+            <div class="slide">
+                <img src="logo.jpg" alt="Slide 4: Kinerja Maksimal" title="Kinerja Maksimal">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <div class="dots-container">
+            <span class="dot dot-active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <p>&copy; 2025 TechGadget Pro. All rights reserved.</p>
+        <div>
+            <a href="#">Hubungi Kami</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Lokasi Toko</a>
+            
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].className = slides[i].className.replace(" slide-active", "");
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" dot-active", "");
+            }
+
+            slides[slideIndex - 1].className += " slide-active";
+            dots[slideIndex - 1].className += " dot-active";
+        }
+    </script>
+</body>
+</html>
